@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 setup(
     name='checkdnssec',
     version='0.1',
-    packages='checkdnssec',
+    packages=find_packages(),
     install_requires=[
       'dnspython',
       'pycrypto',
