@@ -59,11 +59,11 @@ def get_dnssec(dnsresolver, domain_name):
         return
 
 
-
-
-
 if __name__ == "__main__":
-  
+    main()
+
+
+def main():
     dnsresolver = dns.resolver.Resolver()
     # set a default nameserver
     dnsresolver.nameservers = ["8.8.8.8"]
