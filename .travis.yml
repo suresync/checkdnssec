@@ -1,0 +1,22 @@
+language: python
+# supported python versions
+python:
+  - 3.4
+  - 3.6
+  - 2.7
+  - pypy3
+
+# test installation using tox (no testsuite/codestyle yet)
+install: pip install tox-travis
+script: tox
+
+# push package to pypi
+deploy:
+  provider: pypi
+  user: <jouw user>
+  password:
+    secure: <see https://docs.travis-ci.com/user/deployment/pypi/>
+  distributions: "sdist bdist_wheel"
+  on:
+    # don't push on every pull request
+    repo: suresync/checkdnssec
