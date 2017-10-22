@@ -59,21 +59,26 @@ def get_dnssec(dnsresolver, domain_name):
         return
 
 
-
-
-
 if __name__ == "__main__":
-  
+    main()
+
+
+def main():
     dnsresolver = dns.resolver.Resolver()
     # set a default nameserver
     dnsresolver.nameservers = ["8.8.8.8"]
     dnsresolver.timeout = 1.0
     dnsresolver.lifetime = 1.0
-    domain_name = "faalkaart.nl."
-    
+    if len(sys.argv) == 2:
+        domain_name = sys.argv[1]
+    else:
+        domaigitgn_name = "faalkaart.nl."
+
     try:
         get_dnssec(dnsresolver, domain_name)
-        print("Success " + domain_name)
     except:
         print("Failure " + domain_name)
-    
+        sys.exit(1)
+
+    print("Success " + domain_name)
+    sys.exit(0)

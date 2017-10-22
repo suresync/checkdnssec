@@ -1,0 +1,19 @@
+language: python
+python:
+  - 3.4
+  - 3.6
+  - 2.7
+  - pypy3
+
+install: pip install tox-travis
+script: tox
+
+deploy:
+  provider: pypi
+  user: faalkaart
+  password:
+    secure: EiiJBSC1D6+mWqKOWZvXmkcMvJGcGTt+ZtT4mjR4+ft5X+FAI/i8ouzKlRBAhzM3FTAQbAU6+vD8KGS/NrRqmIL7kOvE4TBegBSZk4jcfp5YNqD3LNmdHOl3O66dR3HJBIYmz10XuzhBIdK/If7nohywGjIIiaxlM8LpQif26cKiFnsMn1USI5aA+3+DVePg6TghcX9Sm4ne2x41DwdEZ+LnlPO0ajc+HzszkznZ6xM6H8y061LtFnI3mJNL/vH6EKMofTSimpgpgLu4mA3XOgLxZYd2FOAXYCzwjpQlPL8yM1XtgWUNMQ/Kp5DF/FtNAF4bDweCr5MSG5o/9+jwO60Z1BD1nCi3bblYDVWQooaC/WKhh7k9YJk0Rn4DmqQUdLn2AffPbLBFvM3Y6t3hcLBOte1XW97EVgGysgCY9IaCrdV1HKaDGlLQCtro+DZ6UA6+sgQkB6ls+lQS1EctYDwW/zjv2MuVHZplCH43xkuGHNOaxwi6jhkB6jk1a0gYl43oLmzz9KMEnvgAEDDCbE6S+IooKPQXpxHNG2X1bStbDdQIpFv4e468uGy6MFx0OV0vwfJSs6jJi5VO/HPg87P73gBb+orcj5mtNO04cPJgvWmquXYg3NQmO+B7VoLihYmYksqhuPi29vIZjGaUSZUF6ElszCd7XSwwSR8cOh0=
+  distributions: sdist bdist_wheel
+  on:
+    repo: failmap/checkdnssec
+    tags: true
