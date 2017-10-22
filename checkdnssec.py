@@ -69,7 +69,7 @@ if __name__ == "__main__":
     dnsresolver.nameservers = ["8.8.8.8"]
     dnsresolver.timeout = 1.0
     dnsresolver.lifetime = 1.0
-    domain_name = "dnssec.nl."
+    domain_name = "faalkaart.nl."
     
     try:
         get_dnssec(dnsresolver, domain_name)
